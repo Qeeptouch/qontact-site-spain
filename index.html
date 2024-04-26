@@ -241,7 +241,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<iframe src="https://demo.arcade.software/Tkv7c2V6QPx9qDp00NMJ?embed&show_copy_link=true" title="Dashboard Qontact" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;color-scheme: light;">
 				</iframe>
 			</div>
-		</div><!-- .section-Demo end -->
+		</div>
+		
+		<!-- .section-Demo end -->
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Video de YouTube</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			.video-container {
+				position: relative;
+				width: 100%; /* Tamaño del contenedor del video al 75% del ancho de la pantalla */
+				max-width: 1280px; /* Limita el tamaño máximo del contenedor */
+				margin: 0 auto; /* Centra el contenedor horizontalmente */
+				margin-bottom: 60px; /* Agrega espacio debajo del contenedor del video */
+			}
+			.video-container iframe {
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+	
+	<!-- === Sección de Video =========== -->
+	<div class="video-container">
+		<iframe id="ytplayer" type="text/html" width="1280" height="720" src="https://www.youtube.com/embed/GDirZFF9CeY?autoplay=1&origin=http://example.com" frameborder="0">
+	</iframe>
+	</div>
+	<!-- .section-Video end -->
+	
+	<script>
+		var aspectRatio = 16 / 9; // Relación de aspecto del video (ancho / alto)
+		var container = document.querySelector('.video-container');
+		var iframe = document.querySelector('.video-container iframe');
+	
+		function resizeVideo() {
+			var containerWidth = container.offsetWidth;
+			var containerHeight = containerWidth / aspectRatio;
+			iframe.style.height = containerHeight + 'px';
+		}
+	
+		// Llama a resizeVideo al cargar la página y al cambiar el tamaño de la ventana
+		window.addEventListener('resize', resizeVideo);
+		window.addEventListener('load', resizeVideo);
+	</script>
+		
 
 		<!-- === Section Our Services 2 =========== -->
 		<div id="section-our-services-2" class="section-flat">
